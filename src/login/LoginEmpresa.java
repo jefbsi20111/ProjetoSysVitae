@@ -13,7 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import models.User;
 
-@WebServlet(name="login", urlPatterns={"/templtes/login-empresa"})
+
+@WebServlet(name="login-empresa", urlPatterns={"/templates/login-empresa"})
 
 public class LoginEmpresa extends HttpServlet {
 	

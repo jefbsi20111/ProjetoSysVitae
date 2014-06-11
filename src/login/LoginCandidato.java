@@ -12,7 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import models.User;
 
-@WebServlet(name="login", urlPatterns={"/templates/login-candidato"})
+
+@WebServlet(name="login-candidato", urlPatterns={"/templates/login-candidato"})
 
 public class LoginCandidato extends HttpServlet {
 	

@@ -63,13 +63,13 @@
 </form>
 
 <br>
-<table>
+<table columns="3">
     <thead>
-        <th>
-            <tr>Nome do candidato</tr>
-            <tr>Esperiências</tr>
-            <tr>Area de atauação</tr>
-        </th>
+        <tr>
+            <td>Nome</td>
+            <td>Esperiências</td>
+            <td>Area de atauação</td>
+        </tr>
     </thead>
 
 <tbody>

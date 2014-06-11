@@ -73,7 +73,7 @@
             <input name="senha" type="password" class="form-control required">
           </div>
         </div>
-        <button type="POST" class="btn btn-primary" type="submit">Logar</button>
+        <button class="btn btn-primary" type="submit">Logar</button>
       </form>
       </div>
     </div>

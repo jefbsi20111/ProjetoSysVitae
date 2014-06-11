@@ -18,7 +18,7 @@ public class VagaDAO{
 	  private Connection connection;
 	  
 	  
-	  public VagaDAO() throws ClassNotFoundException {
+	  public VagaDAO() throws ClassNotFoundException, Throwable {
 		    this.connection = new ConnectionFactory().getConnection();
 		  }
 	  
@@ -29,7 +29,7 @@ public class VagaDAO{
 	  public void adicionar(Vaga vaga) throws Throwable{
 		  
 		  String sql = "insert into Vaga" +
-                  " (carga_horaria_vaga,remuneracao_vaga,requisitos_vaga,des_vaga,Empresa_id_empresa,Empresa_email_empresa)" +
+                  " (carga_horaria_vaga,remuneracao_vaga,requisitos_vaga,desc_vaga,Empresa_id_empresa,Empresa_email_empresa)" +
                   " values (?,?,?,?,?,?)";
 		  try {
 			  

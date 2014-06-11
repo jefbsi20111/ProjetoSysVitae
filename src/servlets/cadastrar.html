@@ -1,6 +1,4 @@
-<!-- pagina de cadastro da empresa -->
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- pagina de cadastro do candidato -->
 
 
@@ -9,7 +7,7 @@
 <html lang="br"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Estágio Fácil</title>
+    <title>Est�gio F�cil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,9 +28,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Estágio Fácil</a>
+      <a class="navbar-brand" href="#">Est�gio F�cil</a>
     </div>
-
+	
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -49,33 +47,15 @@
 		Email  email
 -->
 
-    <form action="cadastrar-empresa" class="form-horizontal" method="POST" id="formCad">
-     
+<br><br><br><br>
+    <form action="cadastrar-candidato" class="form-horizontal" method="POST" id="formCad">
        <div class="form-group">
           <div class="col-md-2">
-            <label>Nome Fantasia</label>
+            <label>Nome</label>
           </div>    
           <div class="col-md-3">
             <input name="nome" type="text" class="required form-control">
           </div>    
-        </div>
-
-        <div class="form-group">
-          <div class="col-md-2">
-            <label>CNPJ</label>
-          </div>
-          <div class="col-md-3">
-            <input name="cnpj" type="text" class="form-control required cnpj">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-md-2">
-            <label>Telefone</label>
-          </div>
-          <div class="col-md-3">
-            <input name="telefone" type="text" class="form-control required telefone">
-          </div>
         </div>
 
         <div class="form-group">
@@ -96,6 +76,77 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>CPF</label>
+          </div>
+          <div class="col-md-3">
+            <input name="cpf" type="text" class="form-control cpf">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>Telefone</label>
+          </div>
+          <div class="col-md-3">
+            <input name="telefone" type="text" class="form-control telefone">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>Data de nascimento</label>
+          </div>
+          <div class="col-md-3">
+            <input name="nasc" type="text" class="form-control required nasc">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>Escplaridade</label>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" name="escolaridade">
+      			  <option value="0">Ensino M�dio Imcompleto</option>
+      			  <option value="1">Ensino M�dio Completo</option>
+      			  <option value="2">Ensino Superior Imcompleto</option>
+      			  <option value="3">Ensino Superior Completo</option>
+      			</select>
+          </div>
+        </div>
+<hr>
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>Experi�ncia</label>
+          </div>
+          <div class="col-md-3">
+            <textarea name="exp" type="text" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>�rea de Atua��o</label>
+          </div>
+          <div class="col-md-3">
+            <textarea name="area" type="text" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-2">
+            <label>Apendices</label>
+          </div>
+          <div class="col-md-3">
+
+          <textarea name="apendices" type="text" class="form-control" rows="3"></textarea>
+          
+          </div>
+        </div>
+        
+
         <button class="btn btn-primary" type="submit">Cadastrar</button>
 
       </form>
@@ -115,6 +166,8 @@
   <script type="text/javascript">
   $(document).ready(function(){
     $(".telefone").mask("(99) 9999-9999");
+    $(".cpf").mask("999-999-999-99");
+    $(".data-nascimento").mask("99/99/9999");
   });
   </script>
 
@@ -122,7 +175,6 @@
     $(document).ready(function(){
       
       $("#formCad").validate();
-
     });
   </script>
 

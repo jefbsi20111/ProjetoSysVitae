@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
+
+
 import models.Vaga;
 import dao.VagaDAO;
 
@@ -38,20 +41,20 @@ public class ListarVaga extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			executa(request, response);
-		} catch (ClassNotFoundException e) {
+		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			executa(request, response);
-		} catch (ClassNotFoundException e) {
+		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public void executa(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, ClassNotFoundException {
+	public void executa(HttpServletRequest req, HttpServletResponse res) throws Throwable {
         VagaDAO dao = new VagaDAO();   
         
         req.setAttribute("vagas", dao.listar());

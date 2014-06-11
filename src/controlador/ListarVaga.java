@@ -45,10 +45,10 @@ try {
 				             // criando o objeto Vaga
 				        	 Vaga vaga = new Vaga();
 				        	 vaga.setId(rs.getLong("id_vaga"));
-				        	 vaga.setCarga_horaria(rs.getInt("carga_horaria_vaga"));
-				        	 vaga.setRemuneracao(rs.getFloat("remuneracao_vaga"));
-				        	 vaga.setRequisitos(rs.getString("requisitos_vaga"));
-				        	 vaga.setDescricao(rs.getString("desc_vaga"));
+				        	 vaga.setCarga_horaria(rs.getInt("carga_horaria"));
+				        	 vaga.setRemuneracao(rs.getFloat("remuneracao"));
+				        	 vaga.setRequisitos(rs.getString("requisitos"));
+				        	 vaga.setDescricao(rs.getString("desc"));
 				        	 vaga.setEmpresa_id_empresa(rs.getLong("Empresa_id_empresa"));
 				        	 vaga.setEmpresa_email_empresa(rs.getString("Empresa_email_empresa"));
 				        	 
@@ -72,8 +72,9 @@ try {
 	}
 
 	// Todo código aqui
-	public List<Vaga> listar() throws ClassNotFoundException{
-		VagaDAO dao = new VagaDAO();
+	public List<Vaga> listar() throws Throwable{
+		VagaDAO dao;
+		dao = new VagaDAO();
 		this.vagas = dao.listar();
 		return vagas;
 	}

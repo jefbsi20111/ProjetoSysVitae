@@ -13,6 +13,8 @@ import java.util.List;
 
 
 
+
+
 import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,8 +29,9 @@ import javax.servlet.http.HttpSession;
 
 
 
-import negocio.*;
 
+
+import negocio.*;
 /*import negocio.EnviarEmail;
 import negocio.MailJava;
 import negocio.Mensagens;*/
@@ -51,9 +54,11 @@ public class AddVagaServlet extends HttpServlet {
 		HttpSession s = request.getSession();
 		User user = (User) s.getAttribute("User");
 		String email = user.getEmail();
-		
-		String cargaHoraria = req.getParameter("cargaHoraria");
-		String remuneracao = req.getParameter("remuneraca");
+		System.out.println(email);
+		String cargaHoraria = req.getParameter("carga-horaria");
+		System.out.println(cargaHoraria);
+		String remuneracao = req.getParameter("remuneracao");
+		System.out.println(remuneracao);
 		String requisitos = req.getParameter("requisitos");
 		//String desc = req.getParameter("desc");
 		int carga = Integer.parseInt(cargaHoraria);
@@ -77,8 +82,17 @@ public class AddVagaServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-  
-
+		VagaDAO daoVaga = null;
+		try {
+			daoVaga = new VagaDAO();
+			daoVaga.adicionar(vaga);
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 
 		//req.getRequestDispatcher("ListServlet").forward(req, resp);

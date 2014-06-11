@@ -36,7 +36,7 @@ Document doc = null;
         doc = new Document(PageSize.A4, 72, 72, 72, 72);
 
         //cria a stream de saída
-        os = new FileOutputStream("pdfMaroto.pdf");
+        os = new FileOutputStream("pdffMaroto.pdf");
 
         //associa a stream de saída ao
         PdfWriter.getInstance(doc, os);

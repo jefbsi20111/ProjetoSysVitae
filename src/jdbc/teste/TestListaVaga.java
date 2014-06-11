@@ -8,7 +8,7 @@ import dao.VagaDAO;
 
 public class TestListaVaga {
 
-	public static void main(String[] args) throws ClassNotFoundException {
+	public static void main(String[] args) throws Throwable {
 		VagaDAO dao = new VagaDAO();
 		List<Vaga> vagas= dao.listar();
 
